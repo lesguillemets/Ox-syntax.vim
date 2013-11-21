@@ -32,6 +32,9 @@ hi def link oxLabel Label
 hi def link oxConditional Conditional
 hi def link oxType Type
 hi def link oxStatement Statement
-hi def link oxDeclare Statmenet
+hi def link oxDeclare Statemenet
 hi def link oxQualifier StorageClass
 hi def link oxSpecifier StorageClass
+
+hi def link oxBool Constant
+hi def link oxSpecialNum Constant
