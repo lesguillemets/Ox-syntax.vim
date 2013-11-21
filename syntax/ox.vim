@@ -30,12 +30,13 @@ syn keyword oxBool	FALSE TRUE
 syn keyword oxSpecialNum	.Nan .Infm
 
 " comments, numbers, etc.
-syn match   oxComment	 "//.*$"
-syn region oxComment start="/\*" end="\*/"
+syn match   oxComment	 "//.*$" contains=oxTodo
+syn region  oxComment start="/\*" end="\*/" contains=oxTodo
+syn keyword oxTodo contained TODO
 
-syn match oxNumber	'\<\d\+\>'
-syn match oxNumber	'\<\d+\.\d*\>'
-syn match oxString	'".\{-}"'
+syn match   oxNumber	'\<\d\+\>'
+syn match   oxNumber	'\<\d+\.\d*\>'
+syn match   oxString	'".\{-}"'
 
 " built-in functions
 
@@ -71,6 +72,68 @@ syn keyword oxBuiltinIO	sprint sprintbuffer sscan
 syn keyword oxBuiltinIsType	classname clone isarray isclass isdouble isfile
 syn keyword oxBuiltinIsType	isfunction isint ismatrix ismember isstring
 
+" mathematical functions
+syn keyword oxBuiltinMath	bessel betafunc binomial cabs cdiv cerf cexp
+syn keyword oxBuiltinMath	ceil clog cmul csqrt dawson dfft erf exp expint
+syn keyword oxBuiltinMath	fabs factorial fft fft1d floor fmod 
+syn keyword oxBuiltinMath	gammafact gammafunc idiv imod log log10 loggamma
+syn keyword oxBuiltinMath	polygamma pow round sqr sqrt trunc truncf
+
+" matrix creation
+syn keyword oxBuiltinMatCr	constant diag nans ones range toeplitz unit zeros
+
+" matrix decomposition
+syn keyword oxBuiltinMatDec	choleski decldl decldlband declu 
+syn keyword oxBuiltinMatDec	decqr decqrmul decqrupdate decschur decschurgen
+syn keyword oxBuiltinMatDec	decsvd eigen eigensym eigensymgen
+syn keyword oxBuiltinMatDec	polydiv polyeval polymul polymake polyroots
+syn keyword oxBuiltinMatDec	solveldl solveldlband solvelu solvetoeplitz
+
+" matrix functions
+syn keyword oxBuiltinMatFn	determinant diagonalize invert inverteps invertgen
+syn keyword oxBuiltinMatFn	invertsym logdet norm nullspace outer rank trace
+
+" matrix modifications / selection / reordering
+syn keyword oxBuiltinMatMSR	aggregatec aggregater deletec deleter
+syn keyword oxBuiltinMatMSR	deleteifc deleteifr diagcat diagonal dropc dropr
+syn keyword oxBuiltinMatMSR	exclusion find insertc insetr intersection
+syn keyword oxBuiltinMatMSR	lower reflect reshape reversec reerser
+syn keyword oxBuiltinMatMSR	selectc selectr selectifc selectifr selectrc
+syn keyword oxBuiltinMatMSR	setbounds setdiagonal setlower setupper shape
+syn keyword oxBuiltinMatMSR	sortbyc sortbyr sortc sortr sortcindex
+syn keyword oxBuiltinMatMSR	submat thinc thinr uniion unique invech upper
+syn keyword oxBuiltinMatMSR	vec vech vecindex vecr vecrindex
+
+" probability
+syn keyword oxBuiltinProb	denschi densf densn denst probchi probf probn probt
+syn keyword oxBuiltinProb	quanchi quanf quann quant tailchi tailf tailn tailt
+
+" random numbers
+syn keyword oxBuiltinRand	ranloopseed rann ranseed ranu
+
+" statistics
+syn keyword oxBuiltinStats	correlation meanc meanr moments
+syn keyword oxBuiltinStats	ols2c ols2r olsc olsr quantilec quantiler
+syn keyword oxBuiltinStats	standardize spline varc variance varr
+
+" string functions 
+" TODO : find might cause overwriting problems.
+syn keyword oxBuiltinStr	find replace strfind strfindr strifind strifindr
+syn keyword oxBuiltinStr	strlwr strtrim strupr
+
+" system functions
+syn keyword oxBuiltinSys	chdir exit getcwd getenv getfiles getfolders
+syn keyword oxBuiltinSys	oxfilename oxprintlevel oxversion
+syn keyword oxBuiltinSys	systemcall
+" TODO
+syn keyword oxBException	oxrunerror oxwarning
+
+" time series (data in columns)
+syn keyword oxBuiltinTimeSr	acf cumsum cumprod cumulate diff0 findsample lag0
+syn keyword oxBuiltinTimeSr	periodogram
+
+" trigonometric functions
+syn keyword oxBuiltinTrig	acos asin atan atan2 cos cosh sin sinh tan tanh
 
 " set highlights
 
@@ -87,6 +150,7 @@ hi def link oxBool Constant
 hi def link oxSpecialNum Constant
 
 hi def link oxComment Comment
+hi def link oxTodo Todo
 hi def link oxNumber Constant
 hi def link oxString String
 
@@ -95,3 +159,14 @@ hi def link oxBuiltin Function
 hi def link oxBuiltinGr Function
 hi def link oxBuiltinIO Function
 hi def link oxBuiltinIsType Function
+hi def link oxBuiltinMath Function
+hi def link oxBuiltinMatCr Function
+hi def link oxBuiltinMatFn Function
+hi def link oxBuiltinMatMSR Function
+hi def link oxBuiltinProb Function
+hi def link oxBuiltinRand Function
+hi def link oxBuiltinStats Function
+hi def link oxBuiltinStr Function
+hi def link oxBException Exception
+hi def link oxBuiltinTimeSr Function
+hi def link oxBuiltinTrig Function
