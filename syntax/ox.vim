@@ -1,12 +1,12 @@
 " Vim syntax file
-" Language:	OxMetrics
+" Language:	Ox
 " Maintainer:	lesguillemets (https://github.com/lesguillemets)
 " Last Change:	2013 Nov 22
 
 " Quit when a (custom) syntax file was already loaded
-"if exists("b:current_syntax")
-"  finish
-"endif
+if exists("b:current_syntax")
+  finish
+endif
 
 " We need nocompatible mode in order to continue lines with backslashes.
 " Original setting will be restored.
@@ -31,9 +31,11 @@ syn keyword oxSpecialNum	.Nan .Infm
 
 " comments, numbers, etc.
 syn match   oxComment	 "//.*$"
+syn region oxComment start="/\*" end="\*/"
 
-syn match oxNumber '\<\d\+\>'
-syn match oxNumber '\<\d+\.\d*\>'
+syn match oxNumber	'\<\d\+\>'
+syn match oxNumber	'\<\d+\.\d*\>'
+syn match oxString	'".*"'
 
 " built-in functions
 
@@ -86,6 +88,7 @@ hi def link oxSpecialNum Constant
 
 hi def link oxComment Comment
 hi def link oxNumber Constant
+hi def link oxString String
 
 hi def link oxBuiltinTime Function
 hi def link oxBuiltin Function
