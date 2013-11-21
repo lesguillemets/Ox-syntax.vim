@@ -19,6 +19,20 @@ I'm working on this plugin and there aren't many features yet.
 
 Everything else is yet to be supported.
 
+## Installation
+If you're using `neobundle`, Put this line in your `.vimrc`
+
+```vim
+Neobundle 'git://github.com/lesguillemets/Ox-syntax.vim.git'
+```
+
+and call `:NeoBundleInstall`. This plugin is very young and thus unstable, 
+so using some kind of plugin manager is highly recommended.
+
+If you don't want to use any of these, Download and put files in your `$VIM/`.  
+In my environment, for example, `syntax/ox.vim` will go to `~/.vim/syntax/ox.vim`.
+
+
 ## Todo-s
 
 * Categorise reserved words properly and set highlights accordingly.
