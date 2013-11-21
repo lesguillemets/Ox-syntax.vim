@@ -32,6 +32,9 @@ syn keyword oxSpecialNum	.Nan .Infm
 " comments, numbers, etc.
 syn match   oxComment	 "//.*$"
 
+syn match oxNumber '\<\d\+\>'
+syn match oxNumber '\<\d+\.\d*\>'
+
 " built-in functions
 
 " date and time functions
@@ -80,6 +83,9 @@ hi def link oxSpecifier StorageClass
 
 hi def link oxBool Constant
 hi def link oxSpecialNum Constant
+
+hi def link oxComment Comment
+hi def link oxNumber Constant
 
 hi def link oxBuiltinTime Function
 hi def link oxBuiltin Function
