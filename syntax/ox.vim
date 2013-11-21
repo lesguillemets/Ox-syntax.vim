@@ -35,7 +35,7 @@ syn region oxComment start="/\*" end="\*/"
 
 syn match oxNumber	'\<\d\+\>'
 syn match oxNumber	'\<\d+\.\d*\>'
-syn match oxString	'".*"'
+syn match oxString	'".\{-}"'
 
 " built-in functions
 
