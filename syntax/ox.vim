@@ -29,4 +29,9 @@ syn keyword oxSpecialNum .Nan .Infm
 
 hi def link oxRepeat Repeat
 hi def link oxLabel Label
-hi 
+hi def link oxConditional Conditional
+hi def link oxType Type
+hi def link oxStatement Statement
+hi def link oxDeclare Statmenet
+hi def link oxQualifier StorageClass
+hi def link oxSpecifier StorageClass
