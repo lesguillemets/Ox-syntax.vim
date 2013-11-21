@@ -32,7 +32,7 @@ hi def link oxLabel Label
 hi def link oxConditional Conditional
 hi def link oxType Type
 hi def link oxStatement Statement
-hi def link oxDeclare Statemenet
+hi def link oxDeclare Statement
 hi def link oxQualifier StorageClass
 hi def link oxSpecifier StorageClass
 
