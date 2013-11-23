@@ -42,7 +42,7 @@ syn match   oxString	'".\{-}"'
 
 syn region oxInclude	start='#include\s*<' end='>\s*$' transparent contains=oxIncluder,oxIncluded
 syn keyword oxIncluder contained #include
-syn match oxIncluded contained '<.*>'
+syn match oxIncluded contained '\<<.*>\>'
 
 " built-in functions {{{2
 
