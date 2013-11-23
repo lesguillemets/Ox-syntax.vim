@@ -31,12 +31,11 @@ syn keyword oxRepeat	do for foreach while
 syn keyword oxLabel	case default parallel serial
 syn keyword oxConditional	if else switch switch_single
 syn keyword oxType	array char double int matrix string
-syn keyword oxStatement	break continue goto return
+syn keyword oxStatement	break continue goto return delete new
 syn keyword oxDeclare	decl class struct
 syn keyword oxQualifier	const
 syn keyword oxSpecifier	extern private protected public static
 syn keyword oxDeclWrapper	namespace
-syn keyword oxOp	delete new
 
 syn keyword oxBool	FALSE TRUE
 syn keyword oxSpecialNum	.Nan .Infm
