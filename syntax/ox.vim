@@ -41,7 +41,7 @@ syn match   oxNumber	'\<\d+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
 syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded
-syn keyword oxIncluder	contained #include
+syn keyword oxIncluder	contained include
 syn match oxIncluded	contained '(<.*>)\s*$'
 
 " built-in functions {{{2
@@ -166,7 +166,6 @@ hi def link oxString String
 
 hi def link oxIncluder PreProc
 hi def link oxIncluded String
-hi def link oxInclude String
 
 " built-ins {{{2
 hi def link oxBuiltinTime Function
