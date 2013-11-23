@@ -45,9 +45,22 @@ syn match   oxString	'".\{-}"'
 "syn match oxIncluded	contained '\(<.*>\)\s*$'
 " ......doesn't seem to work.
 " borrowed from c.vim
+" #include<stdio.h>
 syn region	oxIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match	oxIncluded	display contained "<[^>]*>"
 syn match	oxInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=oxIncluded
+
+" #import <sth>
+syn region	oxImported	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
+syn match	oxImported	display contained "<[^>]*>"
+syn match	oxImport	display "^\s*\(%:\|#\)\s*import\>\s*["<]" contains=oxImported
+
+" #ifdef, #ifndef, #if, #else, #endif
+syn match oxPreCondit "^\s*\(%:\|#\)\s*ifdef"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*ifndef"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*if"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*else"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*endif"
 
 " built-in functions {{{2
 
@@ -171,6 +184,9 @@ hi def link oxString String
 
 hi def link oxInclude Include
 hi def link oxIncluded String
+hi def link oxImport Include
+hi def link oxImported String
+hi def link oxPreCondit PreCondit
 
 " built-ins {{{2
 hi def link oxBuiltinTime Function
