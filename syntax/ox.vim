@@ -13,7 +13,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-if !exists(g:OXSyntaxHighlightBuiltins)
+if !exists("g:OXSyntaxHighlightBuiltins")
 	let g:OXSyntaxHighlightBuiltins=1
 endif
 
