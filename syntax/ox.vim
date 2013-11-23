@@ -56,11 +56,11 @@ syn match	oxImported	display contained "<[^>]*>"
 syn match	oxImport	display "^\s*\(%:\|#\)\s*import\>\s*["<]" contains=oxImported
 
 " #ifdef, #ifndef, #if, #else, #endif
-syn match oxPreCondit "^\s*\(%:\|#\)\s*if"
-syn match oxPreCondit "^\s*\(%:\|#\)\s*ifdef"
-syn match oxPreCondit "^\s*\(%:\|#\)\s*ifndef"
-syn match oxPreCondit "^\s*\(%:\|#\)\s*else"
-syn match oxPreCondit "^\s*\(%:\|#\)\s*endif"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*if\s+"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*ifdef\s+"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*ifndef\s+"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*else\s+"
+syn match oxPreCondit "^\s*\(%:\|#\)\s*endif\s+"
 
 " built-in functions {{{2
 
