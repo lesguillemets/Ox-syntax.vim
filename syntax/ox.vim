@@ -50,6 +50,8 @@ syn keyword oxTodo contained TODO
 " numbers {{{3
 syn match   oxNumber	'\<\d\+\>'
 syn match   oxNumber	'\<\d\+\.\d*\>'
+syn match   oxNumber	'\%(^\|\W\)\@<=\d\+\.\d*\%($\|\W\)'
+syn match   oxNumber	'\%(^\|\W\)\@<=.\d\+\%($\|\W\)'
 syn match   oxString	'".\{-}"'
 
 " #include, etc {{{3
