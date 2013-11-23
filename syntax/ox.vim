@@ -41,8 +41,8 @@ syn match   oxNumber	'\<\d+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
 syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
-syn keyword oxIncluder	contained include
-syn match oxIncluded	contained '<.*>\s*$'
+syn keyword oxIncluder	contained #include
+syn match oxIncluded	contained '\(<.*>\)\s*$'
 
 " built-in functions {{{2
 
