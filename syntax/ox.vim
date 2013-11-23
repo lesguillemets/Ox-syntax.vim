@@ -13,6 +13,10 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
+if !exists(g:OXSyntaxHighlightBuiltins)
+	let g:OXSyntaxHighlightBuiltins=1
+endif
+
 " define highlight groups {{{1
 
 " keywords listed in /usr/share/OxMetrics7/OxEdit/bin64/ox.def {{{2
@@ -194,6 +198,8 @@ hi def link oxPreCondit PreCondit
 hi def link oxPreProc PreProc
 
 " built-ins {{{2
+
+if g:OXSyntaxHighlightBuiltins == 1
 hi def link oxBuiltinTime Function
 hi def link oxBuiltin Function
 hi def link oxBuiltinGr Function
@@ -210,3 +216,4 @@ hi def link oxBuiltinStr Function
 hi def link oxBException Exception
 hi def link oxBuiltinTimeSr Function
 hi def link oxBuiltinTrig Function
+endif
