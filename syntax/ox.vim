@@ -25,10 +25,6 @@ endif
 
 " define highlight groups {{{1
 
-" Beta : highlight user defining functions {{{2
-syn match oxDefun	"^\s*\h\+\w*(.\{-})[^;]\{-}$" contains=oxUsrFunc
-syn match oxUsrFunc	"^\s*\h\+\w*" contained
-
 " keywords listed in /usr/share/OxMetrics7/OxEdit/bin64/ox.def {{{2
 
 syn keyword oxRepeat	do for foreach while
@@ -180,6 +176,11 @@ syn keyword oxBuiltinTimeSr	periodogram
 " trigonometric functions {{{3
 syn keyword oxBuiltinTrig	acos asin atan atan2 cos cosh sin sinh tan tanh
 
+" Beta : highlight user defining functions {{{2
+if g:OXSyntaxHighlightDefun==1
+syn match oxDefun	"^\s*\h\+\w*(.\{-})[^;]\{-}$" contains=oxUsrFunc
+syn match oxUsrFunc	"^\s*\h\+\w*" contained
+endif
 
 " set highlights {{{1
 
@@ -234,6 +235,4 @@ hi def link oxBuiltinTrig Function
 endif
 
 " User-defining functions {{{2
-if g:OXSyntaxHighlightDefun == 1
-	hi def link oxUsrFunc Function
-endif
+hi def link oxUsrFunc Function
