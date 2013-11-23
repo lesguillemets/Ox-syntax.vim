@@ -14,8 +14,10 @@ I'm working on this plugin and there aren't many features yet.
 * Numbers : int and float in usual form (1.93), no exp or anything, supported.
 * Strings : Roughly supported.
 * comments : Basically supported. There may be some bugs.
+* #include and others : I think I've managed to support them, but there can be some bugs.
 * To-Dos : string "TODO" will be highlighted accordingly within comment.
 * Built-in functions : Fully supported, but I'm not sure if highlighting all the built-in's is preferred.
+* ftplugin to set format options and comment options properly.
 
 Everything else is yet to be supported.
 
@@ -36,7 +38,6 @@ In my environment, for example, `syntax/ox.vim` will go to `~/.vim/syntax/ox.vim
 ## Todo-s
 
 * Categorise reserved words properly and set highlights accordingly.
-* Support for `#include` and others.
 * See if we can highlight function definitions.
 * Full support for numbers.
 * Review regular expressions.
@@ -64,6 +65,13 @@ But I'll wait for these to be more stable.
 
 lesguillemets. I'd like to thank saji for recommending this language to us.
 
+Any comments, issues and/or pull requests are greatly appreciated. You can use either English or Japanese, or French if absolutely necessary, to contact me.
+
 ## License
 
 MIT
+
+## History
+
+22 Nov 2013 : First commit.
+23 Nov 2013 : added support for `#include` and its family. added `ftplugin` to set format options and comment options properly.
