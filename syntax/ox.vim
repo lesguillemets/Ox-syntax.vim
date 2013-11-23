@@ -236,3 +236,7 @@ endif
 
 " User-defining functions {{{2
 hi def link oxUsrFunc Function
+
+" others {{{1
+
+let b:current_syntax="ox"
