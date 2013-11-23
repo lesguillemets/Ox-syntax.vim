@@ -40,9 +40,13 @@ syn match   oxNumber	'\<\d\+\>'
 syn match   oxNumber	'\<\d+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
-syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
-syn keyword oxIncluder	contained "\#include"
-syn match oxIncluded	contained '\(<.*>\)\s*$'
+"syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
+" borrowed from c.vim
+syn region	oxIncluded	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
+syn match	oxIncluded	display contained "<[^>]*>"
+syn match	oxInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=oxIncluded
+"syn keyword oxIncluder	contained \#include
+"syn match oxIncluded	contained '\(<.*>\)\s*$'
 
 " built-in functions {{{2
 
@@ -164,7 +168,7 @@ hi def link oxTodo Todo
 hi def link oxNumber Constant
 hi def link oxString String
 
-hi def link oxIncluder PreProc
+hi def link oxInclude PreProc
 hi def link oxIncluded String
 
 " built-ins {{{2
