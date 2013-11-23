@@ -166,6 +166,7 @@ hi def link oxString String
 
 hi def link oxIncluder PreProc
 hi def link oxIncluded String
+hi def link oxInclude String
 
 " built-ins {{{2
 hi def link oxBuiltinTime Function
