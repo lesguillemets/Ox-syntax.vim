@@ -55,8 +55,15 @@ syn region	oxImported	display contained start=+"+ skip=+\\\\\|\\"+ end=+"+
 syn match	oxImported	display contained "<[^>]*>"
 syn match	oxImport	display "^\s*\(%:\|#\)\s*import\>\s*["<]" contains=oxImported
 
+" #define,
+syn region oxDefine	start="^\s*\(%:\|#\)\s*\(define\|undef\)\>" skip="\\$" end="$" keepend contains=ALL
+
 " #ifdef, #ifndef, #if, #else, #endif
 syn region oxPreCondit	start="^\s*\(%:\|#\)\s*\(if\|ifdef\|ifndef\|else\|endif\)\>" skip="\\$" end="$" keepend contains=oxNumber,oxComment,oxString
+
+" pragma
+syn region oxPreProc	start="^\s*\(%:\|#\)\s*pragma\>" skip="\\$" end="" keepend contains=ALL
+
 
 " built-in functions {{{2
 
@@ -182,7 +189,9 @@ hi def link oxInclude Include
 hi def link oxIncluded String
 hi def link oxImport Include
 hi def link oxImported String
+hi def link oxDefine Macro
 hi def link oxPreCondit PreCondit
+hi def link oxPreProc PreProc
 
 " built-ins {{{2
 hi def link oxBuiltinTime Function
