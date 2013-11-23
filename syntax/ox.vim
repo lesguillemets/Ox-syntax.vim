@@ -13,9 +13,15 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
+" Initial settings for configurations {{{1
 if !exists("g:OXSyntaxHighlightBuiltins")
 	let g:OXSyntaxHighlightBuiltins=1
 endif
+
+if !exists("g:OXSyntaxHighlightDefun")
+	let g:OXSyntaxHighlightDefun=0
+endif
+
 
 " define highlight groups {{{1
 
@@ -36,14 +42,18 @@ syn keyword oxBool	FALSE TRUE
 syn keyword oxSpecialNum	.Nan .Infm
 
 " comments, numbers, etc. {{{2
+
+" comments {{{3
 syn match   oxComment	 "//.*$" contains=oxTodo
 syn region  oxComment start="/\*" end="\*/" contains=oxTodo
 syn keyword oxTodo contained TODO
 
+" numbers {{{3
 syn match   oxNumber	'\<\d\+\>'
 syn match   oxNumber	'\<\d+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
+" #include, etc {{{3
 "syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
 "syn keyword oxIncluder	contained \#include
 "syn match oxIncluded	contained '\(<.*>\)\s*$'
@@ -166,6 +176,10 @@ syn keyword oxBuiltinTimeSr	periodogram
 " trigonometric functions {{{3
 syn keyword oxBuiltinTrig	acos asin atan atan2 cos cosh sin sinh tan tanh
 
+" Beta : highlight user defining functions {{{2
+syn match oxDefun	"^\s*\h+\w*(.\{-})[^;]\{-}$" contains=oxUsrFunc
+syn match oxUsrFunc	"^\s*\h+\w*" contained
+
 " set highlights {{{1
 
 " keywords listed {{{2
@@ -216,4 +230,9 @@ hi def link oxBuiltinStr Function
 hi def link oxBException Exception
 hi def link oxBuiltinTimeSr Function
 hi def link oxBuiltinTrig Function
+endif
+
+" User-defining functions {{{2
+if g:OXSyntaxHighlightDefun == 1
+	hi def link oxUsrFunc Function
 endif
