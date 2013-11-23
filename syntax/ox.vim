@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Ox
 " Maintainer:	lesguillemets (https://github.com/lesguillemets)
-" Last Change:	2013 Nov 22
+" Last Change:	23 Nov 2013
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")

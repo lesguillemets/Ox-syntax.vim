@@ -1,7 +1,7 @@
 " Vim filetype plugin file
 " Language:	Ox
 " Maintainer:	lesguillemets (https://github.com/lesguillemets)
-" Last Change:	2013 Nov 23 
+" Last Change:	23 Nov 2013
 " based on c.vim.
 
 " Only do this when not done yet for this buffer
