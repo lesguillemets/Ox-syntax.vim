@@ -10,7 +10,7 @@ For I am not familiar with this language, any comments or suggestions (and/or pu
 ## Features
 I'm working on this plugin and there aren't many features yet.
 
-* Partial support for reserved word highlighting.
+* Full, yet provisional support for reserved word highlighting.
 * Numbers : int and float in usual form (1.93), no exp or anything, supported.
 * Strings : Roughly supported.
 * comments : Basically supported. There may be some bugs.
@@ -34,10 +34,21 @@ so using some kind of plugin manager is highly recommended.
 If you don't want to use any of these, Download and put files in your `$VIM/`.  
 In my environment, for example, `syntax/ox.vim` will go to `~/.vim/syntax/ox.vim`.
 
+## Configuration
+
+This plugin should work out of the box, and there are few options available.
+
+If you want to disable highlighting all the built-in functions, try adding
+
+```vim
+let g:OXSyntaxHighlightBuiltins=0
+```
+
+to your .vimrc.
 
 ## Todo-s
 
-* Categorise reserved words properly and set highlights accordingly.
+* Revise the categorization and highlighting of reserved keywords.
 * See if we can highlight function definitions.
 * Full support for numbers.
 * Review regular expressions.
