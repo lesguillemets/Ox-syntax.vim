@@ -49,7 +49,7 @@ syn keyword oxTodo contained TODO
 
 " numbers {{{3
 syn match   oxNumber	'\<\d\+\>'
-syn match   oxNumber	'\<\d+\.\d*\>'
+syn match   oxNumber	'\<\d\+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
 " #include, etc {{{3
