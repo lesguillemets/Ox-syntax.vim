@@ -177,8 +177,8 @@ syn keyword oxBuiltinTimeSr	periodogram
 syn keyword oxBuiltinTrig	acos asin atan atan2 cos cosh sin sinh tan tanh
 
 " Beta : highlight user defining functions {{{2
-syn match oxDefun	"^\s*\h+\w*(.\{-})[^;]\{-}$" contains=oxUsrFunc
-syn match oxUsrFunc	"^\s*\h+\w*" contained
+syn match oxDefun	"^\s*\h\+\w*(.\{-})[^;]\{-}$" contains=oxUsrFunc
+syn match oxUsrFunc	"^\s*\h\+\w*" contained
 
 " set highlights {{{1
 
