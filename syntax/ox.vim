@@ -193,6 +193,7 @@ hi def link oxStatement Statement
 hi def link oxDeclare Statement
 hi def link oxQualifier StorageClass
 hi def link oxSpecifier StorageClass
+hi def link oxDeclWrapper PreProc
 
 hi def link oxBool Constant
 hi def link oxSpecialNum Constant
