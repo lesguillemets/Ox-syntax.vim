@@ -40,6 +40,10 @@ syn match   oxNumber	'\<\d\+\>'
 syn match   oxNumber	'\<\d+\.\d*\>'
 syn match   oxString	'".\{-}"'
 
+syn region oxInclude	start='#include\s*<' end='>' transparent contains=oxIncluder,oxIncluded
+syn keyword oxIncluder contained #include
+syn match oxIncluded contained '<.*>'
+
 " built-in functions {{{2
 
 " date and time functions {{{3
@@ -154,10 +158,14 @@ hi def link oxBool Constant
 hi def link oxSpecialNum Constant
 
 " comments, numbers, etc {{{2
+
 hi def link oxComment Comment
 hi def link oxTodo Todo
 hi def link oxNumber Constant
 hi def link oxString String
+
+hi def link oxIncluder PreProc
+hi def link oxIncluded String
 
 " built-ins {{{2
 hi def link oxBuiltinTime Function
