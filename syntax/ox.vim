@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Ox
 " Maintainer:	lesguillemets (https://github.com/lesguillemets)
-" Last Change:	2013 Nov 22
+" Last Change:	23 Nov 2013
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -47,14 +47,12 @@ syn match   oxComment	 "//.*$" contains=oxTodo
 syn region  oxComment start="/\*" end="\*/" contains=oxTodo
 syn keyword oxTodo contained TODO
 
-" numbers, strings {{{3
+" numbers {{{3
 syn match   oxNumber	'\<\d\+\>'
 "syn match   oxNumber	'\<\d\+\.\d*\>'
 syn match   oxNumber	'\<\d\+\.\d*\%(\W\|$\)\@='
 syn match   oxNumber	'\%(^\|\W\)\@<=\d*\.\d\+\>'
-" syn match   oxString	'".\{-}"'
-syn region oxString start=+\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
-
+syn match   oxString	'".\{-}"'
 
 " #include, etc {{{3
 "syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
@@ -240,3 +238,7 @@ endif
 
 " User-defining functions {{{2
 hi def link oxUsrFunc Function
+
+" others {{{1
+
+let b:current_syntax="ox"
