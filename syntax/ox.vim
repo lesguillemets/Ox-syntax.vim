@@ -1,7 +1,7 @@
 " Vim syntax file
 " Language:	Ox
 " Maintainer:	lesguillemets (https://github.com/lesguillemets)
-" Last Change:	23 Nov 2013
+" Last Change:	1 Dec 2013
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
@@ -52,7 +52,9 @@ syn match   oxNumber	'\<\d\+\>'
 "syn match   oxNumber	'\<\d\+\.\d*\>'
 syn match   oxNumber	'\<\d\+\.\d*\%(\W\|$\)\@='
 syn match   oxNumber	'\%(^\|\W\)\@<=\d*\.\d\+\>'
-syn match   oxString	'".\{-}"'
+
+" strings {{{3
+syn region oxString start=+\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
 
 " #include, etc {{{3
 "syn region oxInclude	start='#include\s*<' end='>\s*$' contains=oxIncluder,oxIncluded transparent oneline
