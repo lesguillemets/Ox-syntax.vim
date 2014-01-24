@@ -52,6 +52,8 @@ syn match   oxNumber	'\<\d\+\>'
 "syn match   oxNumber	'\<\d\+\.\d*\>'
 syn match   oxNumber	'\<\d\+\.\d*\%(\W\|$\)\@='
 syn match   oxNumber	'\%(^\|\W\)\@<=\d*\.\d\+\>'
+syn match   oxNumber	'\<\d\+[eE][+-]\=\d\+\>'
+syn match   oxNumber	'\<\d\+\.\%([eE][+-]\=\d\+\)\=\%(\W\|$\)\@='
 
 " strings {{{3
 syn region oxString start=+\z(['"]\)+ end="\z1" skip="\\\\\|\\\z1"
